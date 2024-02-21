@@ -1396,9 +1396,10 @@ class t3lib_TCEmain	{
 	 * @return	array		Modified $res array
 	 */
 	function checkValue_check($res,$value,$tcaFieldConf,$PP)	{
+		
 		list($table,$id,$curValue,$status,$realPid,$recFID) = $PP;
 
-		$itemC = count($tcaFieldConf['items']);
+		$itemC = count($tcaFieldConf['items'] ?? []);
 		if (!$itemC)	{$itemC=1;}
 		$maxV = pow(2,$itemC);
 

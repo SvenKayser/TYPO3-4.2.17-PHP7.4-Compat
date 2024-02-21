@@ -538,17 +538,17 @@ class t3lib_stdGraphic	{
 	 * @access private
 	 * @see t3lib_iconWorks::imagecopyresized()
 	 */
-	function imagecopyresized(&$im, $cpImg, $Xstart, $Ystart, $cpImgCutX, $cpImgCutY, $w, $h, $w, $h)	{
+	function imagecopyresized(&$im, $cpImg, $Xstart, $Ystart, $cpImgCutX, $cpImgCutY, $targetWidth, $targetHeight, $sourceWidth, $sourceHeight)	{
 		if ($this->imagecopyresized_fix)	{
 			$im_base = $this->imagecreate(imagesx($im), imagesy($im));	// Make true color image
 			imagecopyresized($im_base, $im, 0,0,0,0, imagesx($im),imagesy($im),imagesx($im),imagesy($im));	// Copy the source image onto that
-			imagecopyresized($im_base, $cpImg, $Xstart, $Ystart, $cpImgCutX, $cpImgCutY, $w, $h, $w, $h);	// Then copy the $cpImg onto that (the actual operation!)
+			imagecopyresized($im_base, $cpImg, $Xstart, $Ystart, $cpImgCutX, $cpImgCutY, $targetWidth, $targetHeight, $sourceWidth, $sourceHeight);	// Then copy the $cpImg onto that (the actual operation!)
 			$im = $im_base;	// Set pointer
 			if (!$this->truecolor)	{
 				$this->makeEffect($im, Array('value'=>'colors='.t3lib_div::intInRange($this->setup['reduceColors'], 256, $this->truecolorColors, 256)));		// Reduce to "reduceColors" colors - make SURE that IM is working then!
 			}
 		} else {
-			imagecopyresized($im, $cpImg, $Xstart, $Ystart, $cpImgCutX, $cpImgCutY, $w, $h, $w, $h);
+			imagecopyresized($im, $cpImg, $Xstart, $Ystart, $cpImgCutX, $cpImgCutY, $targetWidth, $targetHeight, $sourceWidth, $sourceHeight);
 		}
 	}
 

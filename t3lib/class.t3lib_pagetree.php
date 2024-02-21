@@ -31,7 +31,7 @@
  * Revised for TYPO3 3.6 November/2003 by Kasper Skaarhoj
  *
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
- * @coauthor	René Fritz <r.fritz@colorcube.de>
+ * @coauthor	Renï¿½ Fritz <r.fritz@colorcube.de>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -70,7 +70,7 @@ require_once (PATH_t3lib.'class.t3lib_treeview.php');
  * Class for generating a page tree.
  *
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
- * @coauthor	René Fritz <r.fritz@colorcube.de>
+ * @coauthor	Renï¿½ Fritz <r.fritz@colorcube.de>
  * @see t3lib_treeView, t3lib_browseTree
  * @package TYPO3
  * @subpackage t3lib
@@ -87,7 +87,7 @@ class t3lib_pageTree extends t3lib_treeView	{
 	 * @param	string		Part of where query which will filter out non-readable pages.
 	 * @return	void
 	 */
-	function init($clause='')	{
+	function init($clause='', $orderByFields='')	{
 		parent::init(' AND deleted=0 '.$clause, 'sorting');
 
 		if (t3lib_extMgm::isLoaded('cms'))	{

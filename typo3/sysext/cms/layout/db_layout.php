@@ -142,7 +142,7 @@ class ext_posMap extends t3lib_positionMap {
 	 * @param	integer		PID value.
 	 * @return	string
 	 */
-	function onClickInsertRecord($row,$vv,$moveUid,$pid) {
+	function onClickInsertRecord($row,$vv,$moveUid,$pid,$sys_lang=0) {
 		if (is_array($row))	{
 			$location=$GLOBALS['SOBE']->local_linkThisScript(array('edit_record'=>'tt_content:new/-'.$row['uid'].'/'.$row['colPos']));
 		} else {

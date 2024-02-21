@@ -93,7 +93,7 @@ class webPageTree extends t3lib_browseTree {
 	 * @param	array		Data row for element.
 	 * @return	string		Page icon
 	 */
-	function wrapIcon($icon,&$row)	{
+	function wrapIcon($icon,$row)	{
 			// If the record is locked, present a warning sign.
 		if ($lockInfo=t3lib_BEfunc::isRecordLocked('pages',$row['uid']))	{
 			$aOnClick = 'alert('.$GLOBALS['LANG']->JScharCode($lockInfo['msg']).');return false;';
@@ -393,8 +393,11 @@ class webPageTree extends t3lib_browseTree {
 	 * @param	string		? (internal)
 	 * @return	integer		The count of items on the level
 	 */
-	function getTree($uid, $depth=999, $blankLineCode='', $subCSSclass='') {
-
+	function getTree($uid, $depth=999, $depthData = '',$blankLineCode='', $subCSSclass='') {
+		if($depthData){
+			throw new Exception("Fix me");
+		}
+		
 			// Buffer for id hierarchy is reset:
 		$this->buffer_idH = array();
 

@@ -2762,7 +2762,7 @@ final class t3lib_BEfunc {
 	public function getUpdateSignalCode() {
 		$signals = array();
 		$modData = $GLOBALS['BE_USER']->getModuleData('t3lib_BEfunc::getUpdateSignal', 'ses');
-		if (!count($modData)) {
+		if ($modData == null || !count($modData)) {
 			return '';
 		}
 
@@ -3289,8 +3289,8 @@ final class t3lib_BEfunc {
 					}
 				}
 			}
-
-			if (!count($GLOBALS['T3_VAR']['RTEobj'])) {
+			
+			if (!$GLOBALS['T3_VAR']['RTEobj'] || is_array($GLOBALS['T3_VAR']['RTEobj']) && !count($GLOBALS['T3_VAR']['RTEobj'])) {
 				$GLOBALS['T3_VAR']['RTEobj'][] = 'No RTEs configured at all';
 			}
 		}

@@ -1707,7 +1707,7 @@ class t3lib_TCEforms_inline {
 	 * @return	array		The item of the stack at the requested level
 	 */
 	function getStructureLevel($level) {
-		$inlineStructureCount = count($this->inlineStructure['stable']);
+		$inlineStructureCount = count($this->inlineStructure['stable'] ?? []);
 		if ($level < 0) $level = $inlineStructureCount+$level;
 		if ($level >= 0 && $level < $inlineStructureCount)
 			return $this->inlineStructure['stable'][$level];
@@ -1981,7 +1981,7 @@ class t3lib_TCEforms_inline {
 	 * @return	integer		The depth of the structure stack
 	 */
 	function getStructureDepth() {
-		return count($this->inlineStructure['stable']);
+		return count($this->inlineStructure['stable'] ?? []);
 	}
 
 
