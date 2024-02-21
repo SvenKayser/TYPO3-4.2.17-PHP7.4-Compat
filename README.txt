@@ -1,4 +1,4 @@
-This is a PHP 7.4 compatible Version of the ancient TYPO3 4.2.17
+This is a PHP 7.4/mariaDB compatible Version of the ancient TYPO3 4.2.17
 
 Why does this exist?
 --------------------
