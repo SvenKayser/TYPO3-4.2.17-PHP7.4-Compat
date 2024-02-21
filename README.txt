@@ -1,3 +1,39 @@
+This is a PHP 7.4 compatible Version of the ancient TYPO3 4.2.17
+
+Why does this exist?
+--------------------
+
+This primarily is supposed to be used for a very old yet very large web
+with over 10K entries, for which there is neither time nor budget to
+update to a modern version of TYPO3 or any other CMS. The only feasible
+option is to make this version work as well as can be expected on a
+modern server stack.
+
+Should I use this?
+------------------
+
+The simple answer is: no. 
+
+The long answer is: probably not. This version, as pretty much all really
+old PHP code, is dotted with examples of bad practices regarding input
+handling. The code in this repository is significantly vulnerable to 
+SQL injections. You should definitely put up additional safeguards like
+an HTTP-AUTH for the typo3 folder so that practically no data is input
+by anyone except a very limited range of people.
+
+Maybe I'll get around to fixing most of this, but for now this really is
+nothing you should use unless you have to.
+
+Will there be a PHP8.3+ version?
+--------------------------------
+
+Yes, there probably will.
+
+
+
+ORIGINAL README:
+
+
 1. About this package
 ******************************************
 
