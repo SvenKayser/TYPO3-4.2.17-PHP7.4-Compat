@@ -190,8 +190,11 @@ class t3lib_recordList {
 				$cssClass = implode(' ', array($this->addElement_tdCssClass[$lastKey], $this->oddColumnsCssClass));
 			}
 
+			if($data === "") $data = [];
+
 			$out.='
-				<td'.$noWrap.' class="' . $cssClass . '"' . $colsp.$this->addElement_tdParams[$lastKey].'>'.$data[$lastKey].'</td>';	}
+				<td'.$noWrap.' class="' . $cssClass . '"' . $colsp.$this->addElement_tdParams[$lastKey].'>'.
+				$data[$lastKey].'</td>';	}
 
 			// End row
 		$out.='

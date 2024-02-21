@@ -292,6 +292,7 @@ class tslib_menu {
 				// Gather list of page uids in root line (for "isActive" evaluation). Also adds the MP params in the path so Mount Points are respected.
 				// (List is specific for this rootline, so it may be supplied from parent menus for speed...)
 			if (!is_array($this->rL_uidRegister))	{
+				$this->rL_uidRegister = [];
 				$rl_MParray = array();
 				foreach($this->tmpl->rootLine as $v_rl)	{
 						// For overlaid mount points, set the variable right now:

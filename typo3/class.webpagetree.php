@@ -393,11 +393,7 @@ class webPageTree extends t3lib_browseTree {
 	 * @param	string		? (internal)
 	 * @return	integer		The count of items on the level
 	 */
-	function getTree($uid, $depth=999, $depthData = '',$blankLineCode='', $subCSSclass='') {
-		if($depthData){
-			throw new Exception("Fix me");
-		}
-		
+	function getTree($uid, $depth=999, $blankLineCode='', $subCSSclass='') {
 			// Buffer for id hierarchy is reset:
 		$this->buffer_idH = array();
 

@@ -255,7 +255,7 @@ class SC_mod_web_ts_index extends t3lib_SCbase {
 						// CLOSE button
 					$buttons['close'] = '<input type="image" class="c-inputButton" name="abort" value="Abort"' . t3lib_iconWorks::skinImg($BACK_PATH, 'gfx/closedok.gif','') . ' title="' . $LANG->sL('LLL:EXT:lang/locallang_core.php:rm.closeDoc', 1) . '" />';
 				}
-			} elseif($this->extClassConf['name'] == 'tx_tstemplateceditor' && count($this->MOD_MENU["constant_editor_cat"])) {
+			} elseif($this->extClassConf['name'] == 'tx_tstemplateceditor' && count($this->MOD_MENU["constant_editor_cat"] ?? [])) {
 					// SAVE button
 				$buttons['save'] = '<input type="image" class="c-inputButton" name="submit" value="Update"' . t3lib_iconWorks::skinImg($BACK_PATH, 'gfx/savedok.gif','') . ' title="' . $LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveDoc', 1) . '" />';
 			} elseif($this->extClassConf['name'] == 'tx_tstemplateobjbrowser') {

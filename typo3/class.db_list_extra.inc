@@ -1531,7 +1531,7 @@ class localRecordList extends recordList {
 					// remove these columns from the CSV view
 				case '_CONTROL_':
 				case '_CLIPBOARD_':
-					continue;
+					continue 2;
 					break;
 
 				default:

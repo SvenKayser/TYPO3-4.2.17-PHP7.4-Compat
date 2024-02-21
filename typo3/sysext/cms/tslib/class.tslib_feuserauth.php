@@ -32,7 +32,7 @@
  * Revised for TYPO3 3.6 June/2003 by Kasper Skaarhoj
  *
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
- * @author	René Fritz <r.fritz@colorcube.de>
+ * @author	Renï¿½ Fritz <r.fritz@colorcube.de>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -72,7 +72,7 @@
  * Extension class for Front End User Authentication.
  *
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
- * @author	René Fritz <r.fritz@colorcube.de>
+ * @author	Renï¿½ Fritz <r.fritz@colorcube.de>
  * @package TYPO3
  * @subpackage tslib
  */
@@ -292,7 +292,7 @@ class tslib_feUserAuth extends t3lib_userAuth {
 			}
 		}
 
-		if (count($this->groupData) && count($this->groupData['TSconfig']))	{
+		if (count($this->groupData ?? []) && count($this->groupData['TSconfig'] ?? []))	{
 				// TSconfig: collect it in the order it was collected
 			foreach($this->groupData['TSconfig'] as $TSdata)	{
 				$this->TSdataArray[]=$TSdata;

@@ -31,7 +31,7 @@
  * Revised for TYPO3 3.6 November/2003 by Kasper Skaarhoj
  *
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
- * @coauthor	René Fritz <r.fritz@colorcube.de>
+ * @coauthor	Renï¿½ Fritz <r.fritz@colorcube.de>
  */
 /**
  * [CLASS/FUNCTION INDEX of SCRIPT]
@@ -107,7 +107,7 @@ require_once (PATH_t3lib.'class.t3lib_div.php');
  * Base class for creating a browsable array/page/folder tree in HTML
  *
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
- * @coauthor	René Fritz <r.fritz@colorcube.de>
+ * @coauthor	Renï¿½ Fritz <r.fritz@colorcube.de>
  * @package TYPO3
  * @subpackage t3lib
  * @see t3lib_browsetree, t3lib_pagetree, t3lib_foldertree
@@ -800,7 +800,7 @@ class t3lib_treeView {
 						$blankLineCode.','.$LN,
 						$row['_SUBCSSCLASS']
 					);
-				if (count($this->buffer_idH))	$idH[$row['uid']]['subrow']=$this->buffer_idH;
+				if (count($this->buffer_idH ?? []))	$idH[$row['uid']]['subrow']=$this->buffer_idH;
 				$exp=1;	// Set "did expand" flag
 			} else {
 				$nextCount=$this->getCount($newID);

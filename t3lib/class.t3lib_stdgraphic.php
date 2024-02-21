@@ -2312,6 +2312,7 @@ class t3lib_stdGraphic	{
 	 * @see imageMagickConvert()
 	 */
 	function getImageScale($info,$w,$h,$options) {
+		if($options === "") $options = [];
 		if (strstr($w.$h, 'm')) {$max=1;} else {$max=0;}
 
 		if (strstr($w.$h, 'c')) {
@@ -2326,6 +2327,7 @@ class t3lib_stdGraphic	{
 		$w=intval($w);
 		$h=intval($h);
 			// if there are max-values...
+		
 		if ($options['maxW'])	{
 			if ($w) {	// if width is given...
 				if ($w>$options['maxW']) {
