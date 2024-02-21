@@ -2041,7 +2041,7 @@ From sub-directory:
 		$ext='Check database';
 		$this->message($ext);
 
-		if (!extension_loaded('mysql') && !t3lib_extMgm::isLoaded('dbal'))	{
+		if (!extension_loaded('mysqli') && !t3lib_extMgm::isLoaded('dbal'))	{
 			$this->message($ext, 'MySQL not available',"
 				PHP does not feature MySQL support (which is pretty unusual).
 			",2);
@@ -5077,6 +5077,8 @@ a:hover {color: #006; text-decoration:underline:}
 			$bytes=doubleval($bytes)*1024*1024;
 		} elseif (stristr($bytes,'k'))	{
 			$bytes=doubleval($bytes)*1024;
+		} elseif (stristr($bytes,'g'))	{
+			$bytes=doubleval($bytes)*1024*1024*1024;
 		}
 		return $bytes;
 	}
