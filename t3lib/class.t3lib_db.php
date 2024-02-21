@@ -101,7 +101,9 @@
  */
 
 
-
+/* PHP7.4 SHIMs */
+require dirname(__FILE__)."/../compat/shim.php";
+/* -- PHP7.4 SHIMs */
 
 
 
@@ -365,10 +367,12 @@ class t3lib_DB {
 			$fields_values = $this->fullQuoteArray($fields_values,$table,$no_quote_fields);
 
 				// Build query:
+
+
 			$query = 'INSERT INTO '.$table.'
 				(
-					'.implode(',
-					',array_keys($fields_values)).'
+					`'.implode('`,
+					`',array_keys($fields_values)).'`
 				) VALUES (
 					'.implode(',
 					',$fields_values).'
@@ -402,7 +406,7 @@ class t3lib_DB {
 
 				$fields = array();
 				foreach ($nArr as $k => $v) {
-					$fields[] = $k.'='.$v;
+					$fields[] = '`'.$k.'`='.$v;
 				}
 
 					// Build query:
