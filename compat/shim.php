@@ -10,8 +10,15 @@
     die();
 });*/
 
-ini_set("display_errors",0);	
+ini_set("display_errors",1);	
+
 /** Courtesy of urbanstudio.de */
+
+
+// Suppress the many, many mismatching declaration warnings.
+set_error_handler(function($errno,$errstr){
+    return strpos($errstr, "Declaration of") === 0;
+},E_WARNING);
 
 class MYSQLCOMP{
 	static public $lp = null;
@@ -62,6 +69,12 @@ function mysql_list_dbs($link=null){
 function mysql_free_result(&$result){
     mysqli_free_result($result);
     return true;
+}
+
+function mysql_field_type($result, int $field_offset) : string {
+    $info = mysqli_fetch_field_direct($result,$field_offset);
+    if(!$info) return "";
+    return $info->type;
 }
 
 /** Courtesy of https://github.com/bbrala/php7-ereg-shim */
