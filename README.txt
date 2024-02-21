@@ -24,6 +24,15 @@ by anyone except a very limited range of people.
 Maybe I'll get around to fixing most of this, but for now this really is
 nothing you should use unless you have to.
 
+Can I use this?
+---------------
+
+It's GPL2. Anyone can use this. All the old documentation applies except
+that this version requires at least PHP 7.1 to run, and will not run beyond
+PHP 7.4.
+
+If you find use for this I'd be interested to hear from you.
+
 Will there be a PHP8.3+ version?
 --------------------------------
 
